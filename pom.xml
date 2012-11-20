@@ -17,11 +17,6 @@
 
   <repositories>
     <repository>
-      <id>snapshot-repo</id>
-      <name>alvinrdeleon github mvn-snapshot-repo</name>
-      <url>https://raw.github.com/alvinrdeleon/piraso-mvn-repo/master/snapshots/</url>
-    </repository>
-    <repository>
       <id>mvnsearch</id>
       <url>http://www.mvnsearch.org/maven2</url>
     </repository>
@@ -55,7 +50,7 @@
     <slf4j-log4j12.version>1.5.8</slf4j-log4j12.version>
     <mockito-all.version>1.9.0</mockito-all.version>
     <log4j.version>1.2.14</log4j.version>
-    <junit.version>4.4</junit.version>
+    <junit.version>4.5</junit.version>
     <dozer.version>5.3.2</dozer.version>
     <dbunit.version>2.4.8</dbunit.version>
     <cglib.version>2.2.2</cglib.version>
@@ -67,10 +62,16 @@
     <hibernate-annotations.version>3.4.0.GA</hibernate-annotations.version>
     <ejb3-persistence.version>1.0.2.GA</ejb3-persistence.version>
     <javassist.version>3.11.0.GA</javassist.version>
+    <aspectjweaver.version>1.6.6</aspectjweaver.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjweaver</artifactId>
+        <version>${aspectjweaver.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.hibernate</groupId>
         <artifactId>hibernate-core</artifactId>
