@@ -1,4 +1,4 @@
 quizler
 =======
 
-A web application for creating online exams
+A web application for creating online exams.
