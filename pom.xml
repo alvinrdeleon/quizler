@@ -12,6 +12,7 @@
 
   <modules>
     <module>core</module>
+    <module>domain-common</module>
     <module>web</module>
   </modules>
 
@@ -63,10 +64,25 @@
     <ejb3-persistence.version>1.0.2.GA</ejb3-persistence.version>
     <javassist.version>3.11.0.GA</javassist.version>
     <aspectjweaver.version>1.6.6</aspectjweaver.version>
+    <hamcrest.version>1.2.1</hamcrest.version>
+    <mysql.version>5.1.13</mysql.version>
+    <hibernate3-maven-plugin.version>2.2</hibernate3-maven-plugin.version>
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-core</artifactId>
+        <version>${hamcrest.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-library</artifactId>
+        <version>${hamcrest.version}</version>
+        <scope>test</scope>
+      </dependency>
       <dependency>
         <groupId>org.aspectj</groupId>
         <artifactId>aspectjweaver</artifactId>
@@ -157,7 +173,11 @@
         <artifactId>spring-jdbc</artifactId>
         <version>${spring.version}</version>
       </dependency>
-
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
@@ -300,6 +320,20 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.4.3</version>
+        <configuration>
+          <forkMode>once</forkMode>
+          <argLine>-server -Xms512m -Xmx1024m -XX:MaxPermSize=256m</argLine>
+          <includes>
+            <include>**/*Test.java</include>
+          </includes>
+          <excludes>
+          </excludes>
+        </configuration>
       </plugin>
     </plugins>
   </build>

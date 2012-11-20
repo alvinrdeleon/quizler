@@ -16,7 +16,7 @@ import java.sql.Connection;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "carbonFiveTransactionManager", defaultRollback = true)
 @Transactional(rollbackFor = Exception.class)
 public abstract class ShardedCarbon5AbstractDataDrivenTest extends Carbon5AbstractDataDrivenTest {
 
@@ -27,7 +27,7 @@ public abstract class ShardedCarbon5AbstractDataDrivenTest extends Carbon5Abstra
     private ShardedDataSourceSelector dataSourceSelector;
 
     protected void setupDbUnitData() throws DatabaseUnitException, Exception {
-        for(Integer shardID : shardProvider.getShardIDs()) {
+        for (Integer shardID : shardProvider.getShardIDs()) {
             dataSourceSelector.switchShard(shardID);
             Connection conn = DataSourceUtils.getConnection(jdbcTemplate.getDataSource());
             IDatabaseConnection dbUnitConn = new DatabaseConnection(conn, dataSourceSelector.getSchema(shardID));

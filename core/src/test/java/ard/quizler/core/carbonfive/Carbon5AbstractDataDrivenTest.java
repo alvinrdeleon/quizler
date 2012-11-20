@@ -35,7 +35,7 @@ import java.util.List;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@TransactionConfiguration(transactionManager = "transactionManager", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "carbonFiveTransactionManager", defaultRollback = true)
 @Transactional(rollbackFor = Exception.class)
 public abstract class Carbon5AbstractDataDrivenTest extends AbstractTransactionalJUnit4SpringContextTests {
 
@@ -49,7 +49,7 @@ public abstract class Carbon5AbstractDataDrivenTest extends AbstractTransactiona
     protected IDataTypeFactory dbUnitDataTypeFactory;
     protected IMetadataHandler dbUnitMetadataHandler;
 
-    @Resource(name="schemaName")
+    @Resource(name = "schemaName")
     private String schema;
 
     @Before

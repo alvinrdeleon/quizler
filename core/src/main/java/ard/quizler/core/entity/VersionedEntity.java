@@ -1,7 +1,10 @@
 package ard.quizler.core.entity;
 
-public interface VersionedEntity {
+import java.io.Serializable;
+
+public interface VersionedEntity extends Serializable {
 
     Long getId();
+
     int getVersion();
 }
