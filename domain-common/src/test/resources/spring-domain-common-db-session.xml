@@ -83,6 +83,7 @@
   </bean>
 
   <alias name="transactionManager" alias="carbonFiveTransactionManager"/>
+  <alias name="transactionManager" alias="commonTransactionManager"/>
 
   <!-- Enable Annotation-based transaction management: -->
   <tx:annotation-driven transaction-manager="transactionManager"/>
