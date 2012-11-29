@@ -21,8 +21,8 @@ public class Account extends BaseAuditedBean {
     @Column(length = 10, nullable = false)
     private AccountStatus status = AccountStatus.IN_ACTIVE;
 
-    @Column(name = "active_time", nullable = true)
-    private Date activeTime;
+    @Column(name = "activation_time", nullable = true)
+    private Date activationTime;
 
     @Column(name = "activation_code", length = 50, nullable = false)
     private String activationCode;
@@ -35,12 +35,12 @@ public class Account extends BaseAuditedBean {
         this.activationCode = activationCode;
     }
 
-    public Date getActiveTime() {
-        return activeTime;
+    public Date getActivationTime() {
+        return activationTime;
     }
 
-    public void setActiveTime(Date activeTime) {
-        this.activeTime = activeTime;
+    public void setActivationTime(Date activationTime) {
+        this.activationTime = activationTime;
     }
 
     public String getDescription() {
