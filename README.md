@@ -1,5 +1,5 @@
-quizler
-=======
+quizler [![Build Status](https://buildhive.cloudbees.com/job/alvinrdeleon/job/quizler/badge/icon)](https://buildhive.cloudbees.com/job/alvinrdeleon/job/quizler/)
+====
 
 A web application for creating online exams.
 
